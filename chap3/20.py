@@ -8,4 +8,3 @@ with gzip.open("jawiki-country.json.gz", "rt") as f:
         if re.match(obj['title'], r'イギリス'):
             print(obj['text'])
 
-

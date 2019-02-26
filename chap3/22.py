@@ -8,7 +8,6 @@ with gzip.open("jawiki-country.json.gz", "rt") as f:
 
         if re.match(obj['title'], r'イギリス'):
             text = obj['text']
-            pattern = re.compile(r'.*\[\[Category:.*\]\].*', re.MULTILINE)
+            pattern = re.compile(r'.*\[\[Category:(.*?)(?:\|.*)?\]\].*', re.MULTILINE)
             for c in pattern.findall(text):
                 print(c)
-
